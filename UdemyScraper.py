@@ -34,9 +34,6 @@ sess = Session()
 inspected_courses = []
 headers = {'authorization': 'Bearer ' + access_token, 'accept': 'application/json, text/plain, */*', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0', 'x-udemy-authorization': 'Bearer ' + access_token, 'content-type': 'application/json;charset=UTF-8', }
 scraped = BeautifulSoup(sess.get("https://yofreesamples.com/courses/free-discounted-udemy-courses-list").text, "html.parser").find_all("div", {"class": "col-xs-12 col-sm-9"})
-c = 0
-
-print("CLAIMED / CHECKED / TOTAL")
 for i in range(0, len(scraped), chunk_size):
     info = []
     tax_info = []
@@ -55,7 +52,9 @@ for i in range(0, len(scraped), chunk_size):
         print(f"(SUCCESSFULLY REDEEMED {chunk_size} COURSES)")
 
 # Check all failed coupons individually
+c = 0
 i = 0
+print("CLAIMED / CHECKED / TOTAL")
 while i < len(inspected_courses):
     uri = inspected_courses[i].find('a', {'class': 'btn btn-md btn-success'}).attrs['href']
     info = loads(BeautifulSoup(sess.get(uri).content, 'html.parser').find("body").attrs['data-module-args'])
