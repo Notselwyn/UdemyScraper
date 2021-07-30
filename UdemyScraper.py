@@ -13,7 +13,7 @@ access_token = ""
 # Client ID cookie on Udemy
 client_id = ""
 
-# Amount of coupons to claim at once (keep in mind, if one of them fail they all fail and have to be checked individually)
+# Amount of coupons to claim at once (keep in mind, if one of them fails they all fail and have to be checked individually)
 chunk_size = 8
 
 """"
