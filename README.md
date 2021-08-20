@@ -8,4 +8,4 @@ I know this code is pretty bad, but I wanted to make a semi-light weighted scrap
 
 ## Education
 
-This code is made for "educational" purposes. The creator is not liable for any harm done to any websites mentioned in this script.
+This program is made for "educational" purposes. The creator is not liable for any harm done to any websites mentioned in this program, nor does the creator condone the use of this program.
